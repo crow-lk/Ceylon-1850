@@ -59,7 +59,7 @@
 								<div class="map_container">
 									<div id="map">
 										<iframe
-											src="https://maps.google.com/maps?q=6.4300274,80.8080724&hl=en&z=16&output=embed"
+											{{-- src="https://maps.google.com/maps?q=6.4300274,80.8080724&hl=en&z=16&output=embed" --}}
 											loading="lazy"
 											referrerpolicy="no-referrer-when-downgrade"
 											allowfullscreen>
