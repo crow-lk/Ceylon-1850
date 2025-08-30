@@ -131,7 +131,7 @@
 @include('components.scripts')
 
 <!-- Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key={{ env('GOOGLE_MAPS_API_KEY') }}"></script>
 
 </body>
 </html>
