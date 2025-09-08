@@ -28,25 +28,24 @@
           <!-- CTA -->
             <div class="col-12 col-lg-3 d-flex justify-content-center align-items-center mt-3 mt-lg-0" style="gap: 15px;">
                 <a href="{{ route('contact') }}" class="reservations_phone">Book Now</a>
-            </div>
-            @auth
-                <div class="dropdown">
-                    <a href="#" class="reservations_phone dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative;">
-                        {{ Auth::user()->name }}
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" style="background: #fff; border: 1px solid #e9ecef; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 160px; margin-top: 5px;">
-                        <a class="dropdown-item" href="#" style="color: #232323; padding: 8px 16px; text-decoration: none; display: block; transition: background-color 0.2s;">Profile</a>
-                        <a class="dropdown-item" href="#" style="color: #232323; padding: 8px 16px; text-decoration: none; display: block; transition: background-color 0.2s;">My Bookings</a>
-                        <div class="dropdown-divider" style="margin: 4px 0; border-color: #e9ecef;"></div>
-                        <form method="POST" action="{{ route('logout') }}" class="d-inline w-100">
-                            @csrf
-                            <button type="submit" class="dropdown-item" style="background: none; border: none; color: #dc3545; padding: 8px 16px; text-decoration: none; display: block; width: 100%; text-align: left; cursor: pointer; transition: background-color 0.2s;">Logout</button>
-                        </form>
+                @auth
+                    <div class="dropdown">
+                        <a href="#" class="reservations_phone dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative;">
+                            {{ explode(' ', Auth::user()->name)[0] }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" style="background: #fff; border: 1px solid #e9ecef; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 160px; margin-top: 5px;">
+                            <a class="dropdown-item" href="#" style="color: #232323; padding: 8px 16px; text-decoration: none; display: block; transition: background-color 0.2s;">Profile</a>
+                            <a class="dropdown-item" href="#" style="color: #232323; padding: 8px 16px; text-decoration: none; display: block; transition: background-color 0.2s;">My Bookings</a>
+                            <div class="dropdown-divider" style="margin: 4px 0; border-color: #e9ecef;"></div>
+                            <form method="POST" action="{{ route('logout') }}" class="d-inline w-100">
+                                @csrf
+                                <button type="submit" class="dropdown-item" style="background: none; border: none; color: #dc3545; padding: 8px 16px; text-decoration: none; display: block; width: 100%; text-align: left; cursor: pointer; transition: background-color 0.2s;">Logout</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            @else
-                <a href="{{ route('login') }}" class="reservations_phone">Login</a>
-            @endauth
+                @else
+                    <a href="{{ route('login') }}" class="reservations_phone">Login</a>
+                @endauth
             </div>
 
         </div>

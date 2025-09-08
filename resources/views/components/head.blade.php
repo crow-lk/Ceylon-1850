@@ -79,5 +79,13 @@
     right: 0;
     z-index: 1000;
 }
+
+/* Ensure user name doesn't break layout */
+.dropdown-toggle {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 </style>
 </head>
