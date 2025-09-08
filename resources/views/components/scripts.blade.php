@@ -28,3 +28,50 @@
 @else
 	<script src="{{ asset('frontend/js/custom.js') }}"></script>
 @endif
+
+<script>
+(function(){
+  const root = document.querySelector('#experiences-overview .timeline');
+  const items = document.querySelectorAll('#experiences-overview .timeline-item');
+  const reveals = document.querySelectorAll('#experiences-overview .reveal');
+  const staggers = document.querySelectorAll('#experiences-overview .stagger-me');
+
+  // Add stagger delays to list items
+  staggers.forEach(ul => {
+    [...ul.children].forEach((li, i) => li.style.transitionDelay = (120 + i*60) + 'ms');
+  });
+
+  // Observer for cards/images
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        // If it's a timeline item, pop dot too
+        if(entry.target.classList.contains('timeline-item')){
+          entry.target.classList.add('in');
+        }
+        // If it's the UL, flip it to "in" to trigger stagger
+        if(entry.target.classList.contains('stagger-me')){
+          entry.target.classList.add('in');
+        }
+      }
+    });
+  }, {threshold: 0.16});
+
+  // Observe reveals and items
+  reveals.forEach(el => obs.observe(el));
+  items.forEach(el => obs.observe(el));
+  staggers.forEach(el => obs.observe(el));
+
+  // Animate the vertical line when the section first enters
+  const lineObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        root.style.setProperty('--tl-scale', '1');
+        lineObs.disconnect();
+      }
+    });
+  }, {threshold: 0.1});
+  lineObs.observe(root);
+})();
+</script>

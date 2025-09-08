@@ -18,9 +18,9 @@
             <ul class="d-flex flex-wrap align-items-center justify-content-center mb-0">
               <li><a href="{{ route('home') }}">Home</a></li>
               <li><a href="{{ route('about') }}">About</a></li>
-              <li><a href="{{ route('packages') }}">Packages</a></li>
+              <!-- <li><a href="{{ route('packages') }}">Packages</a></li> -->
               <li><a href="{{ route('experiences') }}">Experiences</a></li>
-              <li><a href="{{ route('blog') }}">Blog</a></li>
+              <li><a href="#">Blog</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
           </nav>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 @else
-                    <a href="{{ route('login') }}" class="reservations_phone">Login</a>
+                    <!-- <a href="{{ route('login') }}" class="reservations_phone">Login</a> -->
                 @endauth
             </div>
 
@@ -76,8 +76,8 @@
 		<ul>
 			<li><a href="{{ route('home') }}">home</a></li>
 			<li><a href="{{ route('about') }}">about us</a></li>
-			<li><a href="{{ route('packages') }}">packages</a></li>
 			<li><a href="{{ route('experiences') }}">experiences</a></li>
+			<!-- <li><a href="{{ route('experiences') }}">experiences</a></li> -->
 			<li><a href="{{ route('blog') }}">blog</a></li>
 			<li><a href="{{ route('contact') }}">contact</a></li>
 			@auth

@@ -2,6 +2,14 @@
 <html lang="en">
 
 @include('components.head')
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/main_styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/responsive.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/about_styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/about_responsive.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/elements_styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/elements_responsive.css') }}">
+</head>
 
 <body>
 
@@ -9,12 +17,13 @@
 	
 	<!-- Header, Hamburger Menu, and Mobile Menu -->
 	@include('components.header')
+	@include('components.scripts')
 
 	<!-- Hero Section -->
 	@include('components.hero')
 
 	<!-- Intro Section -->
-	<div class="intro">
+	<!-- <div class="intro">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -44,413 +53,151 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<!-- Tabs -->
-	<div class="tabs_wrapper" style="margin-top: 100px;">
-		<div class="tabs">
-			<div class="tab active">Tab 1</div>
-			<div class="tab">Tab 2</div>
-			<div class="tab">Tab 3</div>
-		</div>
-		<div class="tab_panels">
-			<div class="tab_panel active">Panel 1</div>
-			<div class="tab_panel">Panel 2</div>
-			<div class="tab_panel">Panel 3</div>
-		</div>
-	</div>
+	<!-- Living Heritage (add right after the .intro section) -->
+<section id="living-heritage" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      
+      <!-- Image -->
+      <div class="col-12 col-lg-6 order-lg-2">
+        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow">
+          <img 
+            src="{{ asset('frontend/images/intro_1.jpg') }}" 
+            alt="Living heritage at Ceylon 1850, Udawalawe" 
+            class="w-100 h-100" style="object-fit: cover;">
+        </div>
+      </div>
 
-	<!-- Featured Experiences -->
-	<section id="featured-experiences" class="py-5">
-		<!-- Controllers (hidden radios) -->
-		<input type="radio" name="fe" id="fe1" checked>
-		<input type="radio" name="fe" id="fe2">
-		<input type="radio" name="fe" id="fe3">
-		<input type="radio" name="fe" id="fe4">
-		<input type="radio" name="fe" id="fe5">
-		<input type="radio" name="fe" id="fe6">
+      <!-- Text -->
+      <div class="col-12 col-lg-6 order-lg-1">
+        <span class="text-uppercase text-muted small d-block mb-2">Step Into a</span>
+        <h2 class="fs-4 mb-3">Living Heritage</h2>
+        <p class="mb-3">
+          Udawalawe is more than elephants and safaris. At <strong>Ceylon 1850</strong>, you step into a living story; a place where traditions are not performed, but practiced.
+        </p>
+        <p class="mb-4">
+          Where the aroma of firewood cooking mingles with the sound of laughter in the village. Here, every path, every face, and every flavor carries the roots of Sri Lanka’s past, shared openly with you.
+        </p>
+        <div class="d-flex gap-2">
+          <a href="{{ route('packages') }}" class="btn btn-primary">Contact US</a>
+          <!-- <a href="{{ route('contact') }}#enquire" class="btn btn-outline-secondary">Enquire Now</a> -->
+        </div>
+      </div>
 
-		<div class="container">
-			<!-- Header -->
-			<div class="row justify-content-center text-center mb-4">
-				<div class="col-12 col-md-10 col-lg-8">
-					<div class="intro_subtitle page_subtitle">Featured Experiences</div>
-					<div class="section_title">
-						<h1 class="text-light">What You'll Do</h1>
-					</div>
-					<p class="text-muted mb-0 text-light">Hands-on heritage moments hosted by our local family in Udawalawe.</p>
-				</div>
-			</div>
+    </div>
+  </div>
+</section>
 
-			<!-- Layout -->
-			<div class="fe-layout row g-4 ">
-				<!-- LEFT: list -->
-				<div class="col-12 col-lg-5">
-					<div class="fe-selector" role="tablist" aria-label="Experiences list">
-						<input type="radio" name="fe-dummy" style="display:none"> <!-- keep Safari happy -->
-						<label class="fe-item" for="fe1">
-							<span class="fe-icon"><i class="fa fa-leaf" aria-hidden="true"></i></span>
-							<h3 class="text-light">Traditional Welcome</h3>
-							<p class="mb-0">Village attire, cinnamon tea or king coconut, and a warm hello.</p>
-						</label>
-						<label class="fe-item" for="fe2">
-							<span class="fe-icon"><i class="fa fa-diamond" aria-hidden="true"></i></span>
-							<h3 class="text-light">Gem Panning</h3>
-							<p class="mb-0">Try the pan, swirl the gravel, and spot shiny surprises.</p>
-						</label>
-						<label class="fe-item" for="fe3">
-							<span class="fe-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
-							<h3 class="text-light">Cinnamon Stick Rolling</h3>
-							<p class="mb-0">Prepare the bark, roll the quills, breathe the fragrance.</p>
-						</label>
-						<label class="fe-item" for="fe4">
-							<span class="fe-icon"><i class="fa fa-pagelines" aria-hidden="true"></i></span>
-							<h3 class="text-light">Coconut Crafts</h3>
-							<p class="mb-0">Weave, husk, and discover how nothing goes to waste.</p>
-						</label>
-						<label class="fe-item" for="fe5">
-							<span class="fe-icon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
-							<h3 class="text-light">Village Kitchen Skills</h3>
-							<p class="mb-0">Paddy-husking, winnowing, and millet grinding with our hosts.</p>
-						</label>
-						<label class="fe-item" for="fe6">
-							<span class="fe-icon"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
-							<h3 class="text-light">Sweet Making</h3>
-							<p class="mb-0">Cook favourites like <em>kokis</em> and <em>kavum</em>—then taste together.</p>
-						</label>
-					</div>
-				</div>
 
-				<!-- RIGHT: dynamic preview -->
-				<div class="col-12 col-lg-7">
-					<div class="fe-view">
-						<!-- 1 -->
-						<article class="fe-pane pane-fe1" aria-labelledby="fe1">
-							<div class="fe-media position-relative">
-								<img src="{{ asset('frontend/images/exp-welcome.jpg') }}" alt="Traditional welcome at Ceylon 1850">
-							</div>
-							<div class="fe-body">
-								<h3 class="text-light">Traditional Welcome</h3>
-								<p>Slip into village style, sip cinnamon tea or king coconut, and learn how we greet guests in the old way—slow, warm, and personal.</p>
-								<div class="fe-tags">
-									<span class="fe-tag">Cinnamon tea</span>
-									<span class="fe-tag">Village attire</span>
-									<span class="fe-tag">Photo-friendly</span>
-								</div>
-							</div>
-						</article>
+<section id="experiences-overview" class="py-5">
+  <div class="container">
+    <!-- Header -->
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="intro_subtitle page_subtitle">Three Signature Experiences</div>
+        <h2 class="mb-0">Life, Craft & Cooking — the Ceylon 1850 Way</h2>
+      </div>
+    </div>
 
-						<!-- 2 -->
-						<article class="fe-pane pane-fe2" aria-labelledby="fe2">
-							<div class="fe-media position-relative">
-								<img src="{{ asset('frontend/images/exp-gem.jpg') }}" alt="Hands-on gem panning">
-							</div>
-							<div class="fe-body">
-								<h3>Gem Panning</h3>
-								<p>Hear the stories behind Sri Lankan gems, swirl the pan, and try spotting stones yourself—safe, guided, and great for kids.</p>
-								<div class="fe-tags">
-									<span class="fe-tag">Hands-on</span>
-									<span class="fe-tag">All ages</span>
-									<span class="fe-tag">Local stories</span>
-								</div>
-							</div>
-						</article>
+    <div class="timeline position-relative" style="--tl-scale:0;">
+<!-- 1) TEXT RIGHT / IMAGE LEFT -->
+<div class="timeline-item position-relative my-5">
+  <span class="timeline-dot"></span>
+  <div class="row align-items-center g-4">
+    <!-- Image LEFT (mobile first) -->
+    <div class="col-12 col-lg-6 order-1 order-lg-1 pe-lg-5 reveal reveal-left">
+      <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
+        <img src="{{ asset('frontend/images/exp-1.png') }}" alt="Village experience at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+      </div>
+    </div>
+    <!-- Text RIGHT -->
+    <div class="col-12 col-lg-6 order-2 order-lg-2 ps-lg-5 reveal reveal-right">
+      <div class="exp-card p-4 p-md-5 h-100">
+        <span class="text-uppercase text-muted small d-block mb-1">Life as it Was in the 1850s</span>
+        <h3 class="h4 mb-2">Village Experience</h3>
+        <p class="mb-2">Step into a village where the rhythm of life has remained unchanged for generations. From the moment you are welcomed with a <em>jatawa</em> or headscarf (a traditional piece of clothing that also offers protection from the sun), you become part of the story.</p>
+        <p class="mb-3">Sip cinnamon tea or a king coconut freshly picked from the tree, then wander through gardens rich with herbs and spices. Guided by villagers, you’ll learn the small rituals of daily life: weaving coconut leaves, peeling cinnamon, husking paddy, winnowing rice, grinding millet, and scraping coconuts. These simple tasks—once the heartbeat of every home—connect you to the roots of Sri Lanka.</p>
+        <strong class="d-block mb-2">Inclusions:</strong>
+        <ul class="mb-0 stagger-me">
+          <li>Welcome with <em>jatawa</em> and headscarf</li>
+          <li>Cinnamon tea or king coconut drink</li>
+          <li>Walk through organic, spice and herbal gardens</li>
+          <li>Introduction to the gem mine and <em>dona</em></li>
+          <li>Optional coconut tree climbing</li>
+          <li>Coconut-leaf weaving and husk peeling</li>
+          <li>Preparing cinnamon sticks by hand</li>
+          <li>Traditional kitchen activities: husking, winnowing, grinding, coconut husking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-						<!-- 3 -->
-						<article class="fe-pane pane-fe3" aria-labelledby="fe3">
-							<div class="fe-media position-relative">
-								<img src="{{ asset('frontend/images/exp-cinnamon.jpg') }}" alt="Rolling cinnamon sticks">
-							</div>
-							<div class="fe-body">
-								<h3>Cinnamon Stick Rolling</h3>
-								<p>From bark to beautiful quills—prepare, scrape, and roll with our artisans while the kitchen fills with that unmistakable aroma.</p>
-								<div class="fe-tags">
-									<span class="fe-tag">Fragrant</span>
-									<span class="fe-tag">Craft demo</span>
-									<span class="fe-tag">Sri Lankan spice</span>
-								</div>
-							</div>
-						</article>
+<!-- 2) TEXT LEFT / IMAGE RIGHT -->
+<div class="timeline-item position-relative my-5">
+  <span class="timeline-dot"></span>
+  <div class="row align-items-center g-4">
+    <!-- Text LEFT (mobile second) -->
+    <div class="col-12 col-lg-6 order-2 order-lg-1 pe-lg-5 reveal reveal-left">
+      <div class="exp-card p-4 p-md-5 h-100">
+        <span class="text-uppercase text-muted small d-block mb-1">Authentic Roots, Living Stories</span>
+        <h3 class="h4 mb-2">Gem Mine Experience</h3>
+        <p class="mb-2">The gem mines of Sri Lanka hold more than treasures—they carry stories of earth, hands, and heritage passed through generations. Begin with cinnamon tea or king coconut and a short garden walk, with the option to climb a coconut tree.</p>
+        <p class="mb-3">Continue to the <em>dona</em>, a traditional pit where gem gravel is brought to the surface, washed, sieved, and sorted by hand. Watch—and join—the process to feel the thrill of unearthing stones just as miners have done for centuries.</p>
+        <strong class="d-block mb-2">Inclusions:</strong>
+        <ul class="mb-0 stagger-me">
+          <li>Welcome with cinnamon tea or king coconut</li>
+          <li>Organic, spice, and herbal garden walk</li>
+          <li>Coconut tree climbing (optional)</li>
+          <li>Demonstration of gem mining in the <em>dona</em>: extraction, washing, sieving, sorting</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Image RIGHT (mobile first) -->
+    <div class="col-12 col-lg-6 order-1 order-lg-2 ps-lg-5 reveal reveal-right">
+      <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
+        <img src="{{ asset('frontend/images/exp-2.png') }}" alt="Gem mine experience at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</div>
 
-						<!-- 4 -->
-						<article class="fe-pane pane-fe4" aria-labelledby="fe4">
-							<div class="fe-media position-relative">
-								<img src="{{ asset('frontend/images/exp-coconut.jpg') }}" alt="Coconut craft and leaf weaving">
-							</div>
-							<div class="fe-body">
-								<h3>Coconut Crafts</h3>
-								<p>Try leaf weaving, husk a coconut, and see how every part of the tree serves daily life—food, tools, and shelter.</p>
-								<div class="fe-tags">
-									<span class="fe-tag">Leaf weaving</span>
-									<span class="fe-tag">Husking</span>
-									<span class="fe-tag">Zero waste</span>
-								</div>
-							</div>
-						</article>
+<!-- 3) TEXT RIGHT / IMAGE LEFT -->
+<div class="timeline-item position-relative my-5">
+  <span class="timeline-dot"></span>
+  <div class="row align-items-center g-4">
+    <!-- Image LEFT (mobile first) -->
+    <div class="col-12 col-lg-6 order-1 order-lg-1 pe-lg-5 reveal reveal-left">
+      <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
+        <img src="{{ asset('frontend/images/exp-3.png') }}" alt="Cooking experience with lunch/dinner at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+      </div>
+    </div>
+    <!-- Text RIGHT -->
+    <div class="col-12 col-lg-6 order-2 order-lg-2 ps-lg-5 reveal reveal-right">
+      <div class="exp-card p-4 p-md-5 h-100">
+        <span class="text-uppercase text-muted small d-block mb-1">Taste, Tales & Tradition</span>
+        <h3 class="h4 mb-2">Cooking Experience + Lunch or Dinner</h3>
+        <p class="mb-2">The kitchen is the heart of a Sri Lankan home. Start by hand-picking fresh vegetables, herbs, and spices from the village garden. Crack coconuts, grind millet, stir curries over open fire, and laugh with local women who treat you like family.</p>
+        <p class="mb-3">Each recipe is a tale, each spice a story, each dish a memory. Harvest, cook, taste, and share the way it’s been done for generations.</p>
+        <strong class="d-block mb-2">Inclusions:</strong>
+        <ul class="mb-0 stagger-me">
+          <li>Harvesting vegetables and spices from the garden</li>
+          <li>Interactive cooking with local hosts</li>
+          <li>Preparation of traditional dishes over firewood</li>
+          <li>Lunch or dinner with the cooked meal</li>
+          <li>Making &amp; tasting a traditional sweet (Kavum or Kokis)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-						<!-- 5 -->
-						<article class="fe-pane pane-fe5" aria-labelledby="fe5">
-							<div class="fe-media position-relative">
-								<img src="{{ asset('frontend/images/exp-kitchen.jpg') }}" alt="Village kitchen skills">
-							</div>
-							<div class="fe-body">
-								<h3>Village Kitchen Skills</h3>
-								<p>Learn the rhythm of the village kitchen: paddy-husking, winnowing, and millet grinding—then cook together with garden-fresh ingredients.</p>
-								<div class="fe-tags">
-									<span class="fe-tag">Paddy husking</span>
-									<span class="fe-tag">Winnowing</span>
-									<span class="fe-tag">Millet grinding</span>
-								</div>
-							</div>
-						</article>
 
-						<!-- 6 -->
-						<article class="fe-pane pane-fe6" aria-labelledby="fe6">
-							<div class="fe-media position-relative">
-								<img src="{{ asset('frontend/images/exp-sweets.jpg') }}" alt="Making kokis and kavum">
-							</div>
-							<div class="fe-body">
-								<h3>Sweet Making</h3>
-								<p>Mix, shape, and fry traditional sweets like <em>kokis</em> and <em>kavum</em>. Learn the stories and enjoy them warm from the pan.</p>
-								<div class="fe-tags">
-									<span class="fe-tag">Kokis</span>
-									<span class="fe-tag">Kavum</span>
-									<span class="fe-tag">Family-friendly</span>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Loaders -->
-	<div class="loaders">
-		<div class="container">
-			<div class="row justify-content-center text-center mb-4">
-				<div class="col-12 col-md-10 col-lg-8">
-					<div class="sig_subtitle page_subtitle">Living Heritage at a Glance</div>
-					<h1 class="mb-2">A quick snapshot of what guests experience </h1>
-					<p class="text-muted">From your village welcome to a shared garden meal, the day flows through gentle exploration, practical crafts, and warm conversations with our family in Udawalawe.</p>
-				</div>
-			</div>
-			<div class="row loaders_row">
-
-				<!-- Loader -->
-				<div class="col-xl-3 col-md-6 loader_col">
-					<!-- Loader -->
-					<div class="loader_container text-center">
-						<div class="loader text-center" data-perc="0.80"></div>
-						<div class="loader_content">
-							<div class="loader_title">Gem Panning</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Loader -->
-				<div class="col-xl-3 col-md-6 loader_col">
-					<!-- Loader -->
-					<div class="loader_container text-center">
-						<div class="loader text-center" data-perc="0.20"></div>
-						<div class="loader_content">
-							<div class="loader_title">Pasta</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Loader -->
-				<div class="col-xl-3 col-md-6 loader_col">
-					<!-- Loader -->
-					<div class="loader_container text-center">
-						<div class="loader text-center" data-perc="1.00"></div>
-						<div class="loader_content">
-							<div class="loader_title">Perfect</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Loader -->
-				<div class="col-xl-3 col-md-6 loader_col">
-					<!-- Loader -->
-					<div class="loader_container text-center">
-						<div class="loader text-center" data-perc="0.95"></div>
-						<div class="loader_content">
-							<div class="loader_title">Main Courses</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- Video -->
-	<div class="video_section">
-		<div class="background_image" style="background-image:url({{ asset('frontend/images/video.jpg') }})"></div>
-		<div class="video_section_content d-flex flex-column align-items-center justify-content-center text-center">
-			<div class="video_section_title">Living Heritage in Motion</div>
-			<div class="video_section_icon"><a class="vimeo video_button" href="/Users/kavindulakshitha/Downloads/thevenue-gh-pages/videos/AQO4AmuZJrYg3aI1dT0GBoLmwRnh1H68MDmc7ZyLBqLq-p_tKTPoo8JKLSbGsepIQbjBN6ZFlNw36CEq-WYJDjaD.mp4"><i class="fa fa-play" aria-hidden="true"></i></a></div>
-		</div>
-	</div>
-
-	<!-- Packages -->
-	<section id="packages" class="py-5">
-		<div class="container">
-
-			<!-- Header -->
-			<div class="row justify-content-center text-center mb-4">
-				<div class="col-12 col-md-10 col-lg-8">
-					<div class="intro_subtitle page_subtitle">Packages</div>
-					<div class="section_title">
-						<h2>Choose Your Day</h2>
-					</div>
-					<p class="text-muted mb-0">Half-day, full-day, or a tailored workshop—hosted by our local family in Udawalawe.</p>
-				</div>
-			</div>
-
-			<!-- Cards -->
-			<div class="row">
-				<!-- Village Explorer -->
-				<div class="col-12 col-md-6 col-lg-4 mb-4">
-					<div class="pkg-card h-100 d-flex flex-column">
-						<div class="d-flex align-items-center justify-content-between mb-2">
-							<h3 class="mb-0 text-light">Village Explorer</h3>
-							<span class="pkg-tag">Half-Day</span>
-						</div>
-						<ul class="list-unstyled mb-3">
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i>Welcome drink, craft demos, village kitchen skills</li>
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i>Garden-to-kitchen lunch</li>
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i><strong>Ideal for:</strong>&nbsp;Couples &amp; small groups</li>
-						</ul>
-						<div class="mt-auto">
-							<a href="{{ route('packages') }}#explorer" class="btn btn-primary w-100">View Details</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Family Day Out -->
-				<div class="col-12 col-md-6 col-lg-4 mb-4">
-					<div class="pkg-card h-100 d-flex flex-column">
-						<div class="d-flex align-items-center justify-content-between mb-2">
-							<h3 class="mb-0 text-light">Family Day Out</h3>
-							<span class="pkg-tag">Full-Day</span>
-						</div>
-						<ul class="list-unstyled mb-3">
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i>All Explorer activities + sweet making &amp; extra hands-on time</li>
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i>Relaxed pace with photo breaks</li>
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i><strong>Ideal for:</strong>&nbsp;Families with kids</li>
-						</ul>
-						<div class="mt-auto">
-							<a href="{{ route('packages') }}#family" class="btn btn-primary w-100">View Details</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Heritage Workshop -->
-				<div class="col-12 col-md-6 col-lg-4 mb-4">
-					<div class="pkg-card h-100 d-flex flex-column">
-						<div class="d-flex align-items-center justify-content-between mb-2">
-							<h3 class="mb-0 text-light">Heritage Workshop</h3>
-							<span class="pkg-tag">Custom</span>
-						</div>
-						<ul class="list-unstyled mb-3">
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i>Tailored sessions for schools, universities, or teams</li>
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i>Add cultural talks, cooking focus, or more crafts</li>
-							<li class="d-flex"><i class="fa fa-check me-2 mt-1" aria-hidden="true"></i><strong>Ideal for:</strong>&nbsp;Education &amp; corporate groups</li>
-						</ul>
-						<div class="mt-auto">
-							<a href="{{ route('contact') }}#enquire" class="btn btn-primary w-100">Contact Us</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Footnote -->
-			<div class="row">
-				<div class="col-12 text-center">
-					<p class="text-muted small mb-0">Pricing available on request or via seasonal promotions.</p>
-				</div>
-			</div>
-
-		</div>
-	</section>
-
-	<!-- Why Choose Us -->
-	<section id="why-us" class="py-5">
-		<div class="container">
-			<div class="why-surface rounded-4 p-4 p-md-5">
-
-				<!-- Header -->
-				<div class="text-center mb-4">
-
-					<div class="sig_subtitle page_subtitle">Why Choose Us</div>
-					<h1 class="mb-2 text-light text-dark">What Visitors Love About Ceylon 1850</h1>
-
-					<p class="mb-0 text-light">Authentic, small-group, garden-to-kitchen experiences—minutes from Udawalawe safari.</p>
-				</div>
-
-				<!-- Cards -->
-				<div class="row g-4">
-					<!-- 1 -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<a class="why-card" href="#experiences">
-							<span class="why-bg" style="background-image:url('{{ asset('frontend/images/chooseus_1.jpg') }}')"></span>
-							<span class="why-overlay"></span>
-							<span class="why-content">
-								<span class="why-stat">Tradition</span>
-								<span class="why-label">Authentic & local-led</span>
-								<span class="why-sub">Hosted by village families who share everyday traditions warmly, inviting you to participate, learn, and connect through hospitality, and hands-on activities.</span>
-							</span>
-							<span class="why-chip"><i class="fa fa-heart" aria-hidden="true"></i></span>
-						</a>
-					</div>
-
-					<!-- 2 -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<a class="why-card" href="#booking">
-							<span class="why-bg" style="background-image:url('{{ asset('frontend/images/chooseus_2.jpg') }}')"></span>
-							<span class="why-overlay"></span>
-							<span class="why-content">
-								<span class="why-stat">Caring</span>
-								<span class="why-label">Small groups, hands-on</span>
-								<span class="why-sub">Personal, interactive pacing ensures time to try every activity, ask questions, capture photos, and enjoy attentive guidance with safety throughout.</span>
-							</span>
-							<span class="why-chip"><i class="fa fa-users" aria-hidden="true"></i></span>
-						</a>
-					</div>
-
-					<!-- 3 -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<a class="why-card" href="#cooking">
-							<span class="why-bg" style="background-image:url('{{ asset('frontend/images/chooseus_3.jpg') }}')"></span>
-							<span class="why-overlay"></span>
-							<span class="why-content">
-								<span class="why-stat">Fresh</span>
-								<span class="why-label">Garden-to-kitchen cooking</span>
-								<span class="why-sub">Harvest seasonal vegetables, learn traditional techniques in a clay pot kitchen, then cook and share a meal together, creating delicious memories.</span>
-							</span>
-							<span class="why-chip"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
-						</a>
-					</div>
-
-					<!-- 4 -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<a class="why-card" href="#location">
-							<span class="why-bg" style="background-image:url('{{ asset('frontend/images/chooseus_4.jpg') }}')"></span>
-							<span class="why-overlay"></span>
-							<span class="why-content">
-								<span class="why-stat">Location</span>
-								<span class="why-label">Close to Safari</span>
-								<span class="why-sub">Very close from the Elephant Orphanage, easy to pair with safari departures, transfers, and timing, maximizing your day with minimal travel.</span>
-							</span>
-							<span class="why-chip"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-						</a>
-					</div>
-
-				</div>
-			</div>
-	</section>
+    </div><!-- /.timeline -->
+  </div>
+</section>
 
 	<!-- Testimonials -->
 	<section id="testimonials" class="py-5">

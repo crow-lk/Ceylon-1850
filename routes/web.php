@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\ElementsController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PackagesController;
@@ -17,7 +17,7 @@ Route::get('/about', function () {
 
 Route::get('/packages', [PackagesController::class, 'index'])->name('packages');
 
-Route::get('/experiences', [ElementsController::class, 'index'])->name('experiences');
+Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 

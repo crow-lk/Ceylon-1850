@@ -21,15 +21,15 @@
 						<div class="home_subtitle page_subtitle">{{ $heroSubtitle ?? 'Ceylon 1850' }}</div>
 						<div class="home_title">
 							@if(isset($pageType) && $pageType === 'home')
-								<h1>{{ $heroTitle ?? 'An Extraordinary Experience' }}</h1>
+								<h3 class="text-white">{{ $heroTitle ?? 'An Extraordinary Experience' }}</h3>
 							@else
-								<h1>{{ $heroTitle ?? 'Elements' }}</h1>
+								<h3 class="text-white">{{ $heroTitle ?? 'Elements' }}</h3>
 							@endif
 						</div>
 						@if(isset($pageType) && $pageType === 'home')
-							<div class="home_text ml-auto mr-auto">
+							<!-- <div class="home_text ml-auto mr-auto">
 								<p>{{ $heroDescription ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.' }}</p>
-							</div>
+							</div> -->
 						@endif
 					</div>
 				</div>
