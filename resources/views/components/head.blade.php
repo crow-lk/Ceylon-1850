@@ -36,5 +36,48 @@
 @elseif(isset($pageType) && $pageType === 'packages')
 	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/packages.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/menu_responsive.css') }}">
+@elseif(isset($pageType) && $pageType === 'auth')
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/auth.css') }}">
 @endif
+
+<style>
+/* Header dropdown and button spacing fixes */
+.dropdown-item:hover {
+    background-color: #f8f9fa !important;
+}
+
+.dropdown-item:focus {
+    background-color: #f8f9fa !important;
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: 15px) {
+    .header_content .col-12.col-lg-3 a.reservations_phone:first-child {
+        margin-right: 15px;
+    }
+}
+
+/* Ensure dropdown works on mobile */
+@media (max-width: 991px) {
+    .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: auto !important;
+        transform: none !important;
+    }
+}
+
+/* Fix dropdown positioning */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+}
+</style>
 </head>
