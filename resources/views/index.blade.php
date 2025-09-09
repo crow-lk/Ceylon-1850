@@ -22,75 +22,31 @@
 	<!-- Hero Section -->
 	@include('components.hero')
 
-	<!-- Intro Section -->
-	<!-- <div class="intro">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="intro_content">
-						<div class="intro_subtitle page_subtitle">{{ $introSubtitle ?? 'Living Heritage' }}</div>
-						<div class="intro_title">
-							<h2>{{ $introTitle ?? 'Hands-on Village Experience' }}</h2>
-						</div>
-						<div class="intro_text">
-							<p>
-								{{ $introText1 ?? 'Step into living heritage at <strong>Ceylon 1850</strong> in Udawalawe — a hands-on village experience crafted by local families. From your cinnamon-tea welcome to the stories behind our crafts and cuisine, every moment is authentic, relaxed, and memorable.' }}
-							</p>
-							<p>
-								{{ $introText2 ?? 'Pan for gems, roll cinnamon sticks, weave with coconut leaves, try paddy-husking and winnowing, then harvest fresh vegetables to cook a garden-to-kitchen lunch. Finish with Sri Lankan sweets like <em>kokis</em> and <em>kavum</em>. Just 1.4 km south of the Elephant Orphanage, it\'s the perfect complement to your safari day.' }}
-							</p>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-xl-4 col-md-6 intro_col">
-							<div class="intro_image"><img src="{{ asset('frontend/images/intro_1.jpg') }}" alt="https://unsplash.com/@quanle2819"></div>
-						</div>
-						<div class="col-xl-4 col-md-6 intro_col">
-							<div class="intro_image"><img src="{{ asset('frontend/images/intro_2.jpg') }}" alt="https://unsplash.com/@fabmag"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- Living Heritage (add right after the .intro section) -->
-<section id="living-heritage" class="py-5">
+<!-- KAYAK Badge (after Hero) -->
+<section id="kayak-badge" class="py-4 py-md-5">
   <div class="container">
-    <div class="row align-items-center g-4">
-      
-      <!-- Image -->
-      <div class="col-12 col-lg-6 order-lg-2">
-        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow">
-          <img 
-            src="{{ asset('frontend/images/intro_1.jpg') }}" 
-            alt="Living heritage at Ceylon 1850, Udawalawe" 
-            class="w-100 h-100" style="object-fit: cover;">
-        </div>
+    <div class="row justify-content-center">
+      <!-- Mobile: col-10 (nice and big)
+           Tablet: col-md-6
+           Desktop: col-lg-4 (smaller on wide screens) -->
+      <div class="col-10 col-sm-8 col-md-6 col-lg-4 text-center">
+        <a href="https://www.kayak.co.uk/Wigan.50236.guide" target="_blank" rel="noopener" class="d-inline-block">
+          <img
+            src="https://content.r9cdn.net/rimg/seo/badges/v1/LIGHT_LARGE_FIND_US_KAYAK.png"
+            alt="Find us on KAYAK"
+            class="img-fluid"
+          >
+        </a>
       </div>
-
-      <!-- Text -->
-      <div class="col-12 col-lg-6 order-lg-1">
-        <span class="text-uppercase text-muted small d-block mb-2">Step Into a</span>
-        <h2 class="fs-4 mb-3">Living Heritage</h2>
-        <p class="mb-3">
-          Udawalawe is more than elephants and safaris. At <strong>Ceylon 1850</strong>, you step into a living story; a place where traditions are not performed, but practiced.
-        </p>
-        <p class="mb-4">
-          Where the aroma of firewood cooking mingles with the sound of laughter in the village. Here, every path, every face, and every flavor carries the roots of Sri Lanka’s past, shared openly with you.
-        </p>
-        <div class="d-flex gap-2">
-          <a href="{{ route('packages') }}" class="btn btn-primary">Contact US</a>
-          <!-- <a href="{{ route('contact') }}#enquire" class="btn btn-outline-secondary">Enquire Now</a> -->
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 
+
+
+<!-- Experiences Overview -->
 <section id="experiences-overview" class="py-5">
   <div class="container">
     <!-- Header -->
@@ -102,102 +58,118 @@
     </div>
 
     <div class="timeline position-relative" style="--tl-scale:0;">
-<!-- 1) TEXT RIGHT / IMAGE LEFT -->
-<div class="timeline-item position-relative my-5">
-  <span class="timeline-dot"></span>
-  <div class="row align-items-center g-4">
-    <!-- Image LEFT (mobile first) -->
-    <div class="col-12 col-lg-6 order-1 order-lg-1 pe-lg-5 reveal reveal-left">
-      <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
-        <img src="{{ asset('frontend/images/exp-1.png') }}" alt="Village experience at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
-      </div>
-    </div>
-    <!-- Text RIGHT -->
-    <div class="col-12 col-lg-6 order-2 order-lg-2 ps-lg-5 reveal reveal-right">
-      <div class="exp-card p-4 p-md-5 h-100">
-        <span class="text-uppercase text-muted small d-block mb-1">Life as it Was in the 1850s</span>
-        <h3 class="h4 mb-2">Village Experience</h3>
-        <p class="mb-2">Step into a village where the rhythm of life has remained unchanged for generations. From the moment you are welcomed with a <em>jatawa</em> or headscarf (a traditional piece of clothing that also offers protection from the sun), you become part of the story.</p>
-        <p class="mb-3">Sip cinnamon tea or a king coconut freshly picked from the tree, then wander through gardens rich with herbs and spices. Guided by villagers, you’ll learn the small rituals of daily life: weaving coconut leaves, peeling cinnamon, husking paddy, winnowing rice, grinding millet, and scraping coconuts. These simple tasks—once the heartbeat of every home—connect you to the roots of Sri Lanka.</p>
-        <strong class="d-block mb-2">Inclusions:</strong>
-        <ul class="mb-0 stagger-me">
-          <li>Welcome with <em>jatawa</em> and headscarf</li>
-          <li>Cinnamon tea or king coconut drink</li>
-          <li>Walk through organic, spice and herbal gardens</li>
-          <li>Introduction to the gem mine and <em>dona</em></li>
-          <li>Optional coconut tree climbing</li>
-          <li>Coconut-leaf weaving and husk peeling</li>
-          <li>Preparing cinnamon sticks by hand</li>
-          <li>Traditional kitchen activities: husking, winnowing, grinding, coconut husking</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- 2) TEXT LEFT / IMAGE RIGHT -->
-<div class="timeline-item position-relative my-5">
-  <span class="timeline-dot"></span>
-  <div class="row align-items-center g-4">
-    <!-- Text LEFT (mobile second) -->
-    <div class="col-12 col-lg-6 order-2 order-lg-1 pe-lg-5 reveal reveal-left">
-      <div class="exp-card p-4 p-md-5 h-100">
-        <span class="text-uppercase text-muted small d-block mb-1">Authentic Roots, Living Stories</span>
-        <h3 class="h4 mb-2">Gem Mine Experience</h3>
-        <p class="mb-2">The gem mines of Sri Lanka hold more than treasures—they carry stories of earth, hands, and heritage passed through generations. Begin with cinnamon tea or king coconut and a short garden walk, with the option to climb a coconut tree.</p>
-        <p class="mb-3">Continue to the <em>dona</em>, a traditional pit where gem gravel is brought to the surface, washed, sieved, and sorted by hand. Watch—and join—the process to feel the thrill of unearthing stones just as miners have done for centuries.</p>
-        <strong class="d-block mb-2">Inclusions:</strong>
-        <ul class="mb-0 stagger-me">
-          <li>Welcome with cinnamon tea or king coconut</li>
-          <li>Organic, spice, and herbal garden walk</li>
-          <li>Coconut tree climbing (optional)</li>
-          <li>Demonstration of gem mining in the <em>dona</em>: extraction, washing, sieving, sorting</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Image RIGHT (mobile first) -->
-    <div class="col-12 col-lg-6 order-1 order-lg-2 ps-lg-5 reveal reveal-right">
-      <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
-        <img src="{{ asset('frontend/images/exp-2.png') }}" alt="Gem mine experience at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
-      </div>
-    </div>
-  </div>
-</div>
+      <!-- 1) TEXT RIGHT / IMAGE LEFT -->
+      <div class="timeline-item position-relative my-5">
+        <span class="timeline-dot"></span>
+        <div class="row align-items-center g-4">
+          <!-- Image LEFT (mobile first) -->
+          <div class="col-12 col-lg-6 order-1 order-lg-1 pe-lg-5 reveal reveal-left">
+            <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
+              <img src="{{ asset('frontend/images/exp-1.png') }}" alt="Village experience at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <!-- Book Now button under the image -->
+            <div class="text-center mt-3">
+              <a href="{{ route('contact') }}#enquire" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
 
-<!-- 3) TEXT RIGHT / IMAGE LEFT -->
-<div class="timeline-item position-relative my-5">
-  <span class="timeline-dot"></span>
-  <div class="row align-items-center g-4">
-    <!-- Image LEFT (mobile first) -->
-    <div class="col-12 col-lg-6 order-1 order-lg-1 pe-lg-5 reveal reveal-left">
-      <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
-        <img src="{{ asset('frontend/images/exp-3.png') }}" alt="Cooking experience with lunch/dinner at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+          <!-- Text RIGHT -->
+          <div class="col-12 col-lg-6 order-2 order-lg-2 ps-lg-5 reveal reveal-right">
+            <div class="exp-card p-4 p-md-5 h-100">
+              <span class="text-uppercase text-muted small d-block mb-1">Life as it Was in the 1850s</span>
+              <h3 class="h4 mb-2">Village Experience</h3>
+              <p class="mb-2">Step into a village where the rhythm of life has remained unchanged for generations. From the moment you are welcomed with a <em>jatawa</em> or headscarf (a traditional piece of clothing that also offers protection from the sun), you become part of the story.</p>
+              <p class="mb-3">Sip cinnamon tea or a king coconut freshly picked from the tree, then wander through gardens rich with herbs and spices. Guided by villagers, you’ll learn the small rituals of daily life: weaving coconut leaves, peeling cinnamon, husking paddy, winnowing rice, grinding millet, and scraping coconuts. These simple tasks—once the heartbeat of every home—connect you to the roots of Sri Lanka.</p>
+              <strong class="d-block mb-2">Inclusions:</strong>
+              <ul class="mb-0 stagger-me">
+                <li>Welcome with <em>jatawa</em> and headscarf</li>
+                <li>Cinnamon tea or king coconut drink</li>
+                <li>Walk through organic, spice and herbal gardens</li>
+                <li>Introduction to the gem mine and <em>dona</em></li>
+                <li>Optional coconut tree climbing</li>
+                <li>Coconut-leaf weaving and husk peeling</li>
+                <li>Preparing cinnamon sticks by hand</li>
+                <li>Traditional kitchen activities: husking, winnowing, grinding, coconut husking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- Text RIGHT -->
-    <div class="col-12 col-lg-6 order-2 order-lg-2 ps-lg-5 reveal reveal-right">
-      <div class="exp-card p-4 p-md-5 h-100">
-        <span class="text-uppercase text-muted small d-block mb-1">Taste, Tales & Tradition</span>
-        <h3 class="h4 mb-2">Cooking Experience + Lunch or Dinner</h3>
-        <p class="mb-2">The kitchen is the heart of a Sri Lankan home. Start by hand-picking fresh vegetables, herbs, and spices from the village garden. Crack coconuts, grind millet, stir curries over open fire, and laugh with local women who treat you like family.</p>
-        <p class="mb-3">Each recipe is a tale, each spice a story, each dish a memory. Harvest, cook, taste, and share the way it’s been done for generations.</p>
-        <strong class="d-block mb-2">Inclusions:</strong>
-        <ul class="mb-0 stagger-me">
-          <li>Harvesting vegetables and spices from the garden</li>
-          <li>Interactive cooking with local hosts</li>
-          <li>Preparation of traditional dishes over firewood</li>
-          <li>Lunch or dinner with the cooked meal</li>
-          <li>Making &amp; tasting a traditional sweet (Kavum or Kokis)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
 
+      <!-- 2) TEXT LEFT / IMAGE RIGHT -->
+      <div class="timeline-item position-relative my-5">
+        <span class="timeline-dot"></span>
+        <div class="row align-items-center g-4">
+          <!-- Text LEFT (mobile second) -->
+          <div class="col-12 col-lg-6 order-2 order-lg-1 pe-lg-5 reveal reveal-left">
+            <div class="exp-card p-4 p-md-5 h-100">
+              <span class="text-uppercase text-muted small d-block mb-1">Authentic Roots, Living Stories</span>
+              <h3 class="h4 mb-2">Gem Mine Experience</h3>
+              <p class="mb-2">The gem mines of Sri Lanka hold more than treasures—they carry stories of earth, hands, and heritage passed through generations. Begin with cinnamon tea or king coconut and a short garden walk, with the option to climb a coconut tree.</p>
+              <p class="mb-3">Continue to the <em>dona</em>, a traditional pit where gem gravel is brought to the surface, washed, sieved, and sorted by hand. Watch—and join—the process to feel the thrill of unearthing stones just as miners have done for centuries.</p>
+              <strong class="d-block mb-2">Inclusions:</strong>
+              <ul class="mb-0 stagger-me">
+                <li>Welcome with cinnamon tea or king coconut</li>
+                <li>Organic, spice, and herbal garden walk</li>
+                <li>Coconut tree climbing (optional)</li>
+                <li>Demonstration of gem mining in the <em>dona</em>: extraction, washing, sieving, sorting</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Image RIGHT (mobile first) -->
+          <div class="col-12 col-lg-6 order-1 order-lg-2 ps-lg-5 reveal reveal-right">
+            <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
+              <img src="{{ asset('frontend/images/exp-2.png') }}" alt="Gem mine experience at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <!-- Book Now button under the image -->
+            <div class="text-center mt-3">
+              <a href="{{ route('contact') }}#enquire" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3) TEXT RIGHT / IMAGE LEFT -->
+      <div class="timeline-item position-relative my-5">
+        <span class="timeline-dot"></span>
+        <div class="row align-items-center g-4">
+          <!-- Image LEFT (mobile first) -->
+          <div class="col-12 col-lg-6 order-1 order-lg-1 pe-lg-5 reveal reveal-left">
+            <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow exp-img">
+              <img src="{{ asset('frontend/images/exp-3.png') }}" alt="Cooking experience with lunch/dinner at Ceylon 1850" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <!-- Book Now button under the image -->
+            <div class="text-center mt-3">
+              <a href="{{ route('contact') }}#enquire" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Text RIGHT -->
+          <div class="col-12 col-lg-6 order-2 order-lg-2 ps-lg-5 reveal reveal-right">
+            <div class="exp-card p-4 p-md-5 h-100">
+              <span class="text-uppercase text-muted small d-block mb-1">Taste, Tales & Tradition</span>
+              <h3 class="h4 mb-2">Cooking Experience + Lunch or Dinner</h3>
+              <p class="mb-2">The kitchen is the heart of a Sri Lankan home. Start by hand-picking fresh vegetables, herbs, and spices from the village garden. Crack coconuts, grind millet, stir curries over open fire, and laugh with local women who treat you like family.</p>
+              <p class="mb-3">Each recipe is a tale, each spice a story, each dish a memory. Harvest, cook, taste, and share the way it’s been done for generations.</p>
+              <strong class="d-block mb-2">Inclusions:</strong>
+              <ul class="mb-0 stagger-me">
+                <li>Harvesting vegetables and spices from the garden</li>
+                <li>Interactive cooking with local hosts</li>
+                <li>Preparation of traditional dishes over firewood</li>
+                <li>Lunch or dinner with the cooked meal</li>
+                <li>Making &amp; tasting a traditional sweet (Kavum or Kokis)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div><!-- /.timeline -->
   </div>
 </section>
+
 
 	<!-- Testimonials -->
 	<section id="testimonials" class="py-5">
@@ -335,65 +307,79 @@
 		</div>
 	</section>
 
-  <!-- Find Us Online -->
-<section id="find-us" class="py-5 p-40">
+<!-- Find Us Online -->
+<section id="find-us" class="py-5 py-md-5">
   <div class="container">
 
     <!-- Header -->
-    <div class="row justify-content-center text-center mb-4 pb-100">
-      <div class="col-12 col-md-10 col-lg-8">
+    <div class="row justify-content-center text-center mb-4 pb-2 pb-md-3">
+      <div class="col-12 col-md-10 col-lg-8 px-3 px-md-4">
         <div class="sig_subtitle page_subtitle">Find Us Online</div>
         <h2 class="mb-2">Follow, Message & Review</h2>
-        <p class="text-muted mb-0">Connect with us and read real guest reviews across your favorite platforms.</p>
+        <p class="text-muted mb-0 px-2 px-md-4">
+          Connect with us and read real guest reviews across your favorite platforms.
+        </p>
       </div>
     </div>
 
     <!-- Icons / Badges -->
-    <div class="row justify-content-around align-items-center g-3 g-md-4 text-center">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-3 g-md-4 justify-content-center align-items-center text-center py-2 py-md-3 px-2">
+
       <!-- Facebook -->
-      <div class="col-auto">
-        <a href="https://web.facebook.com/Ceylon1850" class="brand-icon facebook" aria-label="Facebook" target="_blank" rel="noopener">
-          <i class="fab fa-facebook-f"></i>
+      <div class="col d-flex justify-content-center py-1">
+        <a href="https://web.facebook.com/Ceylon1850"
+           class="brand-icon facebook d-inline-flex align-items-center justify-content-center p-3 p-lg-3"
+           aria-label="Facebook" target="_blank" rel="noopener">
+          <i class="fa-brands fa-facebook-f fs-1 fs-md-2"></i>
         </a>
       </div>
 
-      <!-- Tripadvisor -->
-      <!-- <div class="col-auto">
-        <a href="#" class="brand-icon tripadvisor" aria-label="Tripadvisor" target="_blank" rel="noopener">
-          <i class="fa-brands fa-tripadvisor"></i>
-        </a>
-      </div> -->
-      
-      <a href="https://www.tripadvisor.com/Restaurant_Review-g3577009-d27164351-Reviews-Ceylon_1850_Authentic_Restaurant-Udawalawa_Sabaragamuwa_Province.html" class="brand-icon tripadvisor" aria-label="Tripadvisor" target="_blank" rel="noopener">
-  <img src="{{ asset('frontend/images/tripadvisor.png') }}" alt="Tripadvisor" style="width:36px;height:26px;display:block;">
-</a>
-
-
-      <!-- KAYAK badge (image provided) -->
-      <div class="col-auto">
-        <a href="#" class="brand-badge kayak" aria-label="Find us on KAYAK" target="_blank" rel="noopener">
-          <img src="https://content.r9cdn.net/rimg/seo/badges/v1/DARK_LARGE_FIND_US_KAYAK.png"
-               alt="Find us on KAYAK" loading="lazy">
+      <!-- Tripadvisor (PNG inside round chip) -->
+      <div class="col d-flex justify-content-center py-1">
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g3577009-d27164351-Reviews-Ceylon_1850_Authentic_Restaurant-Udawalawa_Sabaragamuwa_Province.html"
+           class="brand-icon tripadvisor d-inline-flex align-items-center justify-content-center p-2 p-sm-3"
+           aria-label="Tripadvisor" target="_blank" rel="noopener">
+          <img src="{{ asset('frontend/images/tripadvisor.png') }}"
+               alt="Tripadvisor"
+               class="img-fluid p-1 p-sm-0">
         </a>
       </div>
 
       <!-- WhatsApp -->
-      <div class="col-auto">
-        <a href="https://api.whatsapp.com/send?phone=94777772668" class="brand-icon whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
-          <i class="fab fa-whatsapp"></i>
+      <div class="col d-flex justify-content-center py-1">
+        <a href="https://api.whatsapp.com/send?phone=94777772668"
+           class="brand-icon whatsapp d-inline-flex align-items-center justify-content-center p-3 p-lg-3"
+           aria-label="WhatsApp" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp fs-1 fs-md-2"></i>
         </a>
       </div>
 
       <!-- Google -->
-      <div class="col-auto">
-        <a href="https://www.google.com/search?client=safari&sca_esv=3153b04427d9d7e5&rls=en&sxsrf=AE3TifNX-ieJWYQRAjI2E1H5rG3jzY-8Ug:1756048473756&kgmid=/g/11ldbbm4c1&q=Ceylon+1850-+Village+Culinary,Agriculture+Gem+Mine+Experience&shndl=30&shem=lcuae,lsptbl1,uaasie&source=sh/x/loc/uni/m1/1&kgs=16fb273f92978515&utm_source=lcuae,lsptbl1,uaasie,sh/x/loc/uni/m1/1" class="brand-icon google" aria-label="Google" target="_blank" rel="noopener">
-          <i class="fab fa-google"></i>
+      <div class="col d-flex justify-content-center py-1">
+        <a href="https://www.google.com/search?client=safari&sca_esv=3153b04427d9d7e5&rls=en&sxsrf=AE3TifNX-ieJWYQRAjI2E1H5rG3jzY-8Ug:1756048473756&kgmid=/g/11ldbbm4c1&q=Ceylon+1850-+Village+Culinary,Agriculture+Gem+Mine+Experience&shndl=30&shem=lcuae,lsptbl1,uaasie&source=sh/x/loc/uni/m1/1&kgs=16fb273f92978515&utm_source=lcuae,lsptbl1,uaasie,sh/x/loc/uni/m1/1"
+           class="brand-icon google d-inline-flex align-items-center justify-content-center p-3 p-lg-3"
+           aria-label="Google" target="_blank" rel="noopener">
+          <i class="fa-brands fa-google fs-1 fs-md-2"></i>
         </a>
       </div>
-    </div>
 
+      <!-- (Optional) KAYAK badge — uncomment if you want it here too
+      <div class="col d-flex justify-content-center py-1">
+        <a href="https://www.kayak.co.uk/Wigan.50236.guide"
+           class="d-inline-flex align-items-center justify-content-center p-2 p-sm-3"
+           aria-label="KAYAK" target="_blank" rel="noopener">
+          <img
+            src="https://content.r9cdn.net/rimg/seo/badges/v1/LIGHT_LARGE_FIND_US_KAYAK.png"
+            alt="Find us on KAYAK"
+            class="img-fluid px-2">
+        </a>
+      </div> -->
+
+    </div>
   </div>
 </section>
+
+
 
 
 	<!-- Reservations -->
