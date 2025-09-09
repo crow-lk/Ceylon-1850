@@ -277,7 +277,7 @@ section
 {
 	font-family: 'Montserrat', sans-serif;
 	/* color: #b49383; */
-	color: #ffffff;
+	color:#ffffff;
 	line-height: 0.75;
 }
 .button
@@ -1208,9 +1208,9 @@ section
 /* keep the nav from pushing content */
 .header .main_nav { margin-left: 0 !important; }
 
-.testimonial-card { border: 2px solid #c4ab9f; }   /* brand beige */
-.avatar { width: 56px; height: 56px; object-fit: cover; }
-.stars .fa { color: #232323; }                      /* brand copper */
+/* .testimonial-card { border: 2px solid #c4ab9f; }   /* brand beige */
+/* .avatar { width: 56px; height: 56px; object-fit: cover; }
+.stars .fa { color: #232323; }                      brand copper */ */
 
 /* Optional: darker controls on your dark theme */
 .carousel-control-prev-icon,
@@ -1240,10 +1240,8 @@ section
 .snap-track::-webkit-scrollbar-thumb { background: rgba(255,255,255,.25); border-radius: 8px; }
 .snap-slide { scroll-snap-align: start; scroll-margin-left: 1rem; } /* anchor align */
 
-/* Testimonials */
-.testimonial-card { border: 2px solid #c4ab9f; }  /* brand beige */
-.avatar { width: 56px; height: 56px; object-fit: cover; }
-.stars .fa { color: #000000; }                   /* brand copper */
+
+
 
 /* Dots */
 :root { --brand-brown: #b49383; }
@@ -1928,77 +1926,222 @@ body:not(:has(#t1:target, #t2:target, #t3:target, #t4:target, #t5:target, #t6:ta
 	transform: translateY(-6px);
 }
 
-  /* Drawn vertical line (animated via CSS var) */
-  #experiences-overview .timeline::before{
-    content:""; position:absolute; top:0; bottom:0; left:50%; width:2px;
-    background: var(--bs-border-color, #dee2e6);
-    transform-origin: top;
-    transform: scaleY(var(--tl-scale, 0));
-    transition: transform 1.2s ease-out;
-  }
-  /* Dots pop in */
-  #experiences-overview .timeline-item{ position:relative; }
-  #experiences-overview .timeline-item .timeline-dot{
-    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) scale(.5);
-    width:14px; height:14px; border:3px solid var(--bs-primary);
-    background:#fff; border-radius:50%; z-index:2; opacity:0;
-    box-shadow:0 0 0 4px #fff;
-    transition: transform .5s ease, opacity .5s ease;
-  }
-  #experiences-overview .timeline-item.in .timeline-dot{
-    opacity:1; transform:translate(-50%,-50%) scale(1);
-    animation: tlPulse 1.1s ease 0.2s 1;
-  }
-  @keyframes tlPulse{
-    0%{ box-shadow:0 0 0 4px #fff; }
-    50%{ box-shadow:0 0 0 8px rgba(13,110,253,.15); }
-    100%{ box-shadow:0 0 0 4px #fff; }
-  }
+/* ================================
+   Testimonials – One-by-one Carousel
+   (Full CSS snippet incl. wider card)
+   ================================ */
 
-  /* Reveal animations */
-  .reveal{ opacity:0; will-change: transform, opacity; }
-  .reveal-left{ transform: translateX(-40px); }
-  .reveal-right{ transform: translateX(40px); }
-  .reveal.in{
-    opacity:1; transform: translateX(0); 
-    transition: transform .7s cubic-bezier(.2,.65,.2,1), opacity .7s ease;
-  }
-
-  /* Stagger list items */
-  .stagger-me li{ opacity:0; transform:translateY(6px); transition:opacity .4s ease, transform .4s ease; }
-  .stagger-me.in li{ opacity:1; transform:translateY(0); }
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce){
-    #experiences-overview .timeline::before{ transition:none; transform:none; }
-    .timeline-dot, .reveal, .stagger-me li{ transition:none; transform:none; opacity:1; animation:none; }
-  }
-
-  /* Mobile: shift line/dots left so they don't overlap content */
-  @media (max-width: 991.98px){
-    #experiences-overview .timeline::before{ left: 1rem; }
-    #experiences-overview .timeline-item .timeline-dot{ left: 1rem; }
-    #experiences-overview .pe-lg-5, #experiences-overview .ps-lg-5{ padding:0 !important; }
-  }
-
-  /* Framed image look for experience images */
-#experiences-overview .exp-img{
-  border: 6px solid rgba(255,255,255,.92);     /* soft white frame */
-  border-radius: 1rem;                         /* matches rounded-4 */
-  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.12);  /* gentle depth */
+/* Wrapper hides partial slides */
+#testimonials .snap-wrapper{
   overflow: hidden;
-  position: relative;
-}
-#experiences-overview .exp-img::after{
-  content:"";
-  position:absolute; inset:0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); /* thin inner line for polish */
-  pointer-events: none;
 }
 
-/* If your page has a dark background behind the section, this keeps contrast nice */
-@media (prefers-color-scheme: dark){
-  #experiences-overview .exp-img{
-    border-color: rgba(255,255,255,.75);
-  }
+/* Track scrolls horizontally with snap */
+#testimonials .snap-track{
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: .25rem 0 0;
+  /* Hide scrollbar (Firefox + WebKit) */
+  scrollbar-width: none;
 }
+#testimonials .snap-track::-webkit-scrollbar{ display:none; }
+
+/* Each slide = full viewport width (one at a time) */
+#testimonials .snap-slide{
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* Wider testimonial card */
+#testimonials .testimonial-card{
+  max-width: clamp(820px, 75vw, 1100px); /* wider than default 760px */
+  margin: 0 auto;                        /* center the card in the slide */
+  border-radius: 1rem;                   /* subtle rounding */
+}
+
+/* A touch more breathing room inside */
+#testimonials .testimonial-card .card-body{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Extra-wide desktops can go a bit wider */
+@media (min-width: 1400px){
+  #testimonials .testimonial-card{ max-width: 1200px; }
+}
+
+/* Keep mobile full-width */
+@media (max-width: 991.98px){
+  #testimonials .testimonial-card{ max-width: 100%; }
+}
+
+/* Dots */
+#testimonials .snap-dot{
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  margin: .25rem;
+  transition: transform .2s, background .2s;
+}
+#testimonials .snap-dot.active{
+  background: var(--bs-primary, #c4ab9f);
+  transform: scale(1.15);
+}
+
+/* Optional polish (scoped to testimonials) */
+#testimonials .avatar{
+  width: 64px; height: 64px;
+  object-fit: cover;
+}
+#testimonials .stars .fa-star{
+  color: var(--bs-warning, #f1c40f);
+}
+
+/* ================================
+   Testimonials – Border + Justify
+   ================================ */
+
+/* Add a visible border to the card
+   (HTML currently has `border-0`; this override uses !important.
+   If you prefer, remove `border-0` from the HTML instead.) */
+#testimonials .testimonial-card{
+  border: 1px solid var(--bs-border-color, #e9ecef) !important;
+  border-radius: 1rem;                        /* keep rounded corners */
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 .5rem 1.25rem rgba(0,0,0,.08); /* gentle depth */
+}
+
+/* Justify all content inside the card body */
+#testimonials .testimonial-card .card-body{
+  text-align: justify;
+  text-justify: inter-word;   /* improves spacing where supported */
+}
+
+/* Help justification look cleaner on long lines */
+#testimonials .testimonial-card p,
+#testimonials .testimonial-card small{
+  hyphens: auto;              /* allow hyphenation when available */
+  word-break: normal;
+}
+
+/* Keep header rows tidy (avatar/name/stars shouldn’t stretch weirdly) */
+#testimonials .testimonial-card .d-flex{ text-align: left; }
+#testimonials .stars{ text-align: left; }
+
+/* Center the header row: avatar + name/country */
+#testimonials .testimonial-card .card-body > .d-flex.align-items-center{
+  justify-content: center;     /* center the row as a group */
+  text-align: center;          /* center the text block (name/country) */
+}
+
+/* Ensure the name/country block is centered */
+#testimonials .testimonial-card .card-body > .d-flex.align-items-center > div{
+  text-align: center;
+}
+
+/* Keep avatar happy inside the centered row */
+#testimonials .testimonial-card .avatar{
+  display: block;              /* no width change, just layout-friendly */
+}
+
+/* Center stars, paragraph, and the "Visited ..." note */
+#testimonials .testimonial-card .stars,
+#testimonials .testimonial-card p,
+#testimonials .testimonial-card small{
+  text-align: center !important;  /* override any previous justify */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make the "Visited ..." note sit on its own line neatly */
+#testimonials .testimonial-card small{
+  display: block;
+}
+
+
+/* Find Us – styles */
+#find-us .brand-chip{
+  border: 1px solid var(--bs-border-color, #e9ecef);
+  border-radius: .75rem;
+  background: var(--bs-body-bg, #fff);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+#find-us .brand-chip:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 .35rem 1rem rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.08);
+}
+
+/* Brand colours (original) */
+#find-us .brand-facebook{ color:#1877F2; }     /* Facebook blue */
+#find-us .brand-tripadvisor{ color:#34E0A1; }  /* Tripadvisor green */
+#find-us .brand-whatsapp{ color:#25D366; }     /* WhatsApp green */
+#find-us .brand-google{ color:#4285F4; }       /* Google blue (monochrome icon) */
+
+/* KAYAK badge sizing */
+#find-us .brand-badge-kayak{
+  height: 100px;            /* close to FA 2x height */
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Tidy spacing on tiny screens */
+@media (max-width: 575.98px){
+  #find-us .brand-chip{ padding-top: .75rem !important; padding-bottom: .75rem !important; }
+}
+
+/* Find Us Online – brand icons */
+#find-us .brand-icon{
+  width: 76px; height: 76px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  color: #fff; font-size: 1.25rem; text-decoration: none;
+  box-shadow: 0 .5rem 1.25rem rgba(0,0,0,.10);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+#find-us .brand-icon:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.14);
+  filter: saturate(1.05);
+}
+
+/* Brand colours */
+#find-us .brand-icon.facebook   { background:#1877F2; }
+#find-us .brand-icon.tripadvisor{ background:#34E0A1; } /* TripAdvisor green */
+#find-us .brand-icon.whatsapp   { background:#25D366; }
+#find-us .brand-icon.google     { background:#EA4335; } /* Google blue for single-colour icon */
+
+/* KAYAK badge styling */
+#find-us .brand-badge.kayak{
+  display: inline-flex; align-items: center; justify-content: center;
+  /* padding: .25rem .5rem; */
+  border-radius: .5rem;
+  background: transparent;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#find-us .brand-badge.kayak img{
+  height: 100px; width: auto; display:block;
+}
+#find-us .brand-badge.kayak:hover{
+  transform: translateY(-2px);
+}
+
+/* Optional: larger icons on very wide screens */
+@media (min-width: 1400px){
+  #find-us .brand-icon{ width: 64px; height: 64px; font-size: 2.35rem; }
+  #find-us .brand-badge.kayak img{ height: 100px; }
+}
+
+/* Hero video background */
+.home{ position: relative; min-height: 60vh; }
+.hero-video-wrap{ position:absolute; inset:0; overflow:hidden; z-index:0; }
+.hero-video{ width:100%; height:100%; object-fit:cover; }
+.hero-overlay{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.35)); }
+.home_container{ position:relative; z-index:1; } /* keep text above video */

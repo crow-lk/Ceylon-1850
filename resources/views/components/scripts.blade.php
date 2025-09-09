@@ -74,4 +74,55 @@
   }, {threshold: 0.1});
   lineObs.observe(root);
 })();
+
+(function(){
+  const track = document.querySelector('#testimonials #t-track');
+  const slides = [...document.querySelectorAll('#testimonials .snap-slide')];
+  const dots = [...document.querySelectorAll('#testimonials .snap-dot')];
+
+  if(!track || !slides.length) return;
+
+  // Click dots -> scroll to slide
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = dot.getAttribute('href')?.slice(1);
+      const slide = document.getElementById(targetId) || slides[i];
+      if(slide){
+        track.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Highlight active dot based on visibility
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const idx = slides.indexOf(entry.target);
+        dots.forEach(d => d.classList.remove('active'));
+        if(dots[idx]) dots[idx].classList.add('active');
+      }
+    });
+  }, { root: track, threshold: 0.6 });
+
+  slides.forEach(s => obs.observe(s));
+
+  // Keyboard left/right navigation when the track is focused
+  track.addEventListener('keydown', (e) => {
+    if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault();
+    // find closest slide to center
+    const center = track.scrollLeft + track.clientWidth/2;
+    let current = 0;
+    slides.forEach((s, i) => {
+      const mid = s.offsetLeft + s.clientWidth/2;
+      const curMid = slides[current].offsetLeft + slides[current].clientWidth/2;
+      if(Math.abs(mid - center) < Math.abs(curMid - center)) current = i;
+    });
+    const next = e.key === 'ArrowRight' ? Math.min(current+1, slides.length-1)
+                                        : Math.max(current-1, 0);
+    track.scrollTo({ left: slides[next].offsetLeft, behavior: 'smooth' });
+  });
+})();
+
 </script>

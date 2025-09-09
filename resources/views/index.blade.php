@@ -335,6 +335,67 @@
 		</div>
 	</section>
 
+  <!-- Find Us Online -->
+<section id="find-us" class="py-5 p-40">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row justify-content-center text-center mb-4 pb-100">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="sig_subtitle page_subtitle">Find Us Online</div>
+        <h2 class="mb-2">Follow, Message & Review</h2>
+        <p class="text-muted mb-0">Connect with us and read real guest reviews across your favorite platforms.</p>
+      </div>
+    </div>
+
+    <!-- Icons / Badges -->
+    <div class="row justify-content-around align-items-center g-3 g-md-4 text-center">
+      <!-- Facebook -->
+      <div class="col-auto">
+        <a href="https://web.facebook.com/Ceylon1850" class="brand-icon facebook" aria-label="Facebook" target="_blank" rel="noopener">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+
+      <!-- Tripadvisor -->
+      <!-- <div class="col-auto">
+        <a href="#" class="brand-icon tripadvisor" aria-label="Tripadvisor" target="_blank" rel="noopener">
+          <i class="fa-brands fa-tripadvisor"></i>
+        </a>
+      </div> -->
+      
+      <a href="https://www.tripadvisor.com/Restaurant_Review-g3577009-d27164351-Reviews-Ceylon_1850_Authentic_Restaurant-Udawalawa_Sabaragamuwa_Province.html" class="brand-icon tripadvisor" aria-label="Tripadvisor" target="_blank" rel="noopener">
+  <img src="{{ asset('frontend/images/tripadvisor.png') }}" alt="Tripadvisor" style="width:36px;height:26px;display:block;">
+</a>
+
+
+      <!-- KAYAK badge (image provided) -->
+      <div class="col-auto">
+        <a href="#" class="brand-badge kayak" aria-label="Find us on KAYAK" target="_blank" rel="noopener">
+          <img src="https://content.r9cdn.net/rimg/seo/badges/v1/DARK_LARGE_FIND_US_KAYAK.png"
+               alt="Find us on KAYAK" loading="lazy">
+        </a>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="col-auto">
+        <a href="https://api.whatsapp.com/send?phone=94777772668" class="brand-icon whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Google -->
+      <div class="col-auto">
+        <a href="https://www.google.com/search?client=safari&sca_esv=3153b04427d9d7e5&rls=en&sxsrf=AE3TifNX-ieJWYQRAjI2E1H5rG3jzY-8Ug:1756048473756&kgmid=/g/11ldbbm4c1&q=Ceylon+1850-+Village+Culinary,Agriculture+Gem+Mine+Experience&shndl=30&shem=lcuae,lsptbl1,uaasie&source=sh/x/loc/uni/m1/1&kgs=16fb273f92978515&utm_source=lcuae,lsptbl1,uaasie,sh/x/loc/uni/m1/1" class="brand-icon google" aria-label="Google" target="_blank" rel="noopener">
+          <i class="fab fa-google"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 	<!-- Reservations -->
 	@include('components.reservations')
 

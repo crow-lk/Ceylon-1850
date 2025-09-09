@@ -17,9 +17,9 @@
           <nav class="main_nav col-12 col-lg-6">
             <ul class="d-flex flex-wrap align-items-center justify-content-center mb-0">
               <li><a href="{{ route('home') }}">Home</a></li>
-              <li><a href="{{ route('about') }}">About</a></li>
+              <li><a href="#about-us">About</a></li>
               <!-- <li><a href="{{ route('packages') }}">Packages</a></li> -->
-              <li><a href="{{ route('experiences') }}">Experiences</a></li>
+              <li><a href="#experiences">Experiences</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>

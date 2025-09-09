@@ -17,6 +17,11 @@
 <link href="{{ asset('frontend/plugins/jquery-datepicker/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('frontend/plugins/jquery-timepicker/jquery.timepicker.css') }}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/main_styles.css') }}">
+<!-- Font Awesome (all: Solid, Regular, Brands) -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer">
+
 
 @if(isset($customCSS))
 	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/' . $customCSS) }}">
