@@ -20,7 +20,7 @@
 			<!-- Footer About -->
 			<div class="col-lg-6 footer_col">
 				<div class="footer_about">
-					<p>{{ $footerAbout ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio.' }}</p>
+					<p><strong>Ceylon 1850</strong> brings Sri Lanka's living heritage to life in Udawalawe. Spend a half or full day with local hosts—try gem mining, cinnamon stick making, coconut crafts, paddy-husking and traditional sweet making—then share a garden-to-kitchen meal. </p>
 				</div>
 			</div>
 
@@ -29,16 +29,16 @@
 				<div class="footer_contact">
 					<ul>
 						<li class="d-flex flex-row align-items-start justify-content-start">
-							<div><div class="footer_contact_title">Address:</div></div>
+							<div><div class="footer_contact_title">Address</div></div>
 							<div class="footer_contact_text">1.4 km south of Udawalawe Elephant Orphanage, Udawalawe, Sri Lanka</div>
 						</li>
 						<li class="d-flex flex-row align-items-start justify-content-start">
-							<div><div class="footer_contact_title">Phone:</div></div>
-							<div class="footer_contact_text">+94 76 424 6613</div>
+							<div><div class="footer_contact_title">Phone</div></div>
+							<div class="footer_contact_text">+94 77 777 2668</div>
 						</li>
 						<li class="d-flex flex-row align-items-start justify-content-start">
-							<div><div class="footer_contact_title">Email:</div></div>
-							<div class="footer_contact_text">{{ $footerEmail ?? 'yourmail@gmail.com' }}</div>
+							<div><div class="footer_contact_title">Email</div></div>
+							<div class="footer_contact_text">{{ $footerEmail ?? 'ceylon1850@gmail.com' }}</div>
 						</li>
 					</ul>
 				</div>

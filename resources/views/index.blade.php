@@ -22,30 +22,6 @@
 	<!-- Hero Section -->
 	@include('components.hero')
 
-
-<!-- KAYAK Badge (after Hero) -->
-<section id="kayak-badge" class="py-4 py-md-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <!-- Mobile: col-10 (nice and big)
-           Tablet: col-md-6
-           Desktop: col-lg-4 (smaller on wide screens) -->
-      <div class="col-10 col-sm-8 col-md-6 col-lg-4 text-center">
-        <a href="https://www.kayak.co.uk/Wigan.50236.guide" target="_blank" rel="noopener" class="d-inline-block">
-          <img
-            src="https://content.r9cdn.net/rimg/seo/badges/v1/LIGHT_LARGE_FIND_US_KAYAK.png"
-            alt="Find us on KAYAK"
-            class="img-fluid"
-          >
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
 <!-- Experiences Overview -->
 <section id="experiences-overview" class="py-5">
   <div class="container">
@@ -306,6 +282,39 @@
 
 		</div>
 	</section>
+
+  <!-- Partners -->
+<section id="partners" class="py-5">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h2 class="mb-2">Our Partners</h2>
+        <p class="text-muted mb-0">We’re proud to be listed on trusted travel platforms.</p>
+      </div>
+    </div>
+
+    <!-- Logos / Badges -->
+    <div class="row justify-content-center">
+      <!-- Mobile: col-10 (bigger)
+           Tablet: col-md-6
+           Desktop: col-lg-4 (smaller on wide screens) -->
+      <div class="col-10 col-sm-8 col-md-6 col-lg-4 text-center">
+        <a href="https://www.kayak.co.uk/Wigan.50236.guide" target="_blank" rel="noopener"
+           class="d-inline-block p-3 p-md-4">
+          <img
+            src="https://content.r9cdn.net/rimg/seo/badges/v1/LIGHT_LARGE_FIND_US_KAYAK.png"
+            alt="Find us on KAYAK"
+            class="img-fluid"
+          >
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- Find Us Online -->
 <section id="find-us" class="py-5 py-md-5">
