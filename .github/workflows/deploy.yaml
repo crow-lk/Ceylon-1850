@@ -39,11 +39,11 @@ jobs:
         node-version: '22'
 
     # Step 5: Install NPM dependencies and build assets
-    - name: Install NPM Dependencies
-      run: npm install
+    # - name: Install NPM Dependencies
+    #   run: npm install
 
-    - name: Build Frontend Assets
-      run: npm run build
+    # - name: Build Frontend Assets
+    #   run: npm run build
 
     # Step 6: Install sshpass
     - name: Install sshpass
