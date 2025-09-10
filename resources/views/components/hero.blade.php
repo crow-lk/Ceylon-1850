@@ -41,13 +41,19 @@
         <div class="col">
           <div class="home_content text-center">
             <div class="home_subtitle page_subtitle">{{ $heroSubtitle ?? 'Ceylon 1850' }}</div>
-            <div class="home_title">
+            <!-- <div class="home_title">
               @if(isset($pageType) && $pageType === 'home')
                 <h3 class="text-white">{{ $heroTitle ?? 'An Extraordinary Experience' }}</h3>
               @else
                 <h3 class="text-white">{{ $heroTitle ?? 'Elements' }}</h3>
               @endif
-            </div>
+            </div> -->
+            <div class="home_title">
+  <h3 class="text-white mt-3 mt-md-0 mb-3 mb-md-2">
+    {{ $heroTitle ?? 'An Extraordinary Experience' /* or 'Experience Udawalawe' */ }}
+  </h3>
+</div>
+
             {{-- Optional description for home --}}
             {{-- <div class="home_text ml-auto mr-auto"><p>{{ $heroDescription ?? '' }}</p></div> --}}
           </div>
