@@ -30,7 +30,7 @@
 					<ul>
 						<li class="d-flex flex-row align-items-start justify-content-start">
 							<div><div class="footer_contact_title">Address</div></div>
-							<div class="footer_contact_text">1.4 km south of Udawalawe Elephant Orphanage, Udawalawe, Sri Lanka</div>
+							<div class="footer_contact_text">No 572, Thambiliwatta, Third lane, <br> Maha Ara, Udawalawe</div>
 						</li>
 						<li class="d-flex flex-row align-items-start justify-content-start">
 							<div><div class="footer_contact_title">Phone</div></div>
