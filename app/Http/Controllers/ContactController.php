@@ -18,9 +18,9 @@ class ContactController extends Controller
             'contactInfo' => 'Ceylon 1850 is a living-heritage experience in Udawalawe. Spend a relaxed half or full day with our local hosts—roll cinnamon, weave coconut leaves, try gem panning, and cook a garden-to-kitchen meal together. Just 1.4 km from the Elephant Orphanage, our small-group sessions are warm, safe, and hands-on—perfect for families, couples, and friends.',
             'contactAddress' => '1.4 km south of Udawalawe Elephant Orphanage, Udawalawe, Sri Lanka',
             'contactPhone' => '+94 76 424 6613',
-            'contactEmail' => 'info@ceylon1850.com',
+            'contactEmail' => '',
             'footerAbout' => '<strong>Ceylon 1850</strong> brings Sri Lanka\'s living heritage to life in Udawalawe. Spend a half or full day with local hosts—try gem mining, cinnamon stick making, coconut crafts, paddy-husking and traditional sweet making—then share a garden-to-kitchen meal. We keep groups small, respect the community and environment, and welcome families and travellers of all ages.',
-            'footerEmail' => 'info@ceylon1850.com'
+            'footerEmail' => 'ceylon1850@gmail.com'
         ];
 
         return view('contact', $data);

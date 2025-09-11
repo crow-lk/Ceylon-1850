@@ -226,7 +226,7 @@ public function index()
         'contactInfo' => 'Contact information text...',
         'contactAddress' => 'Address details...',
         'contactPhone' => '+94 76 424 6613',
-        'contactEmail' => 'info@ceylon1850.com'
+        'contactEmail' => 'ceylon1850@gmail.com'
     ];
 
     return view('contact', $data);
@@ -246,7 +246,7 @@ public function index()
         'heroTitle' => 'Our Blog',
         'loadMoreText' => 'Load More',
         'footerAbout' => 'Footer about text...',
-        'footerEmail' => 'info@ceylon1850.com'
+        'footerEmail' => 'ceylon1850@gmail.com'
     ];
 
     return view('blog', $data);
@@ -272,7 +272,7 @@ public function index()
         'package1Feature1' => 'Feature description...',
         // ... more features
         'footerAbout' => 'Footer about text...',
-        'footerEmail' => 'info@ceylon1850.com'
+        'footerEmail' => 'ceylon1850@gmail.com'
     ];
 
     return view('packages', $data);

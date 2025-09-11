@@ -17,7 +17,7 @@ class ExperienceController extends Controller
             'heroSubtitle' => 'Ceylon 1850',
             'heroTitle' => 'Experiences',
             'footerAbout' => 'Ceylon 1850 brings Sri Lanka\'s living heritage to life in Udawalawe. Experience authentic village life with local hosts.',
-            'footerEmail' => 'info@ceylon1850.com',
+            'footerEmail' => 'ceylon1850@gmail.com',
             'customCSS' => 'packages.css',
             'customScript' => 'packages.js',
             'experiences' => Experience::all()

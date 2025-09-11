@@ -41,7 +41,7 @@
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div><div>E-mail</div></div>
-									<div>{{ $contactEmail ?? 'info@ceylon1850.com' }}</div>
+									<div>{{ $contactEmail ?? 'ceylon1850@gmail.com' }}</div>
 								</li>
 							</ul>
 						</div>
